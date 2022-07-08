@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FORM</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <style>
+        input[type=text], select {
+          width: 50%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+          width: 50%;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+        body {
+        -moz-transform: scale(0.7, 0.7); /* Moz-browsers */
+        zoom: 0.7; /* Other non-webkit browsers */
+        zoom: 70%; /* Webkit browsers */
+        background-color: rgb(245, 244, 244);        
+        }
+
+        .btn-lg{
+            padding: 1% 3%;
+            font-size: 300%;
+            font-weight: bolder;
+        }
+        .result{
+            background-color: white;
+            width: 50%;
+            padding: 3% 5%;
+        }        
+        </style>   
+
+</head>
+<body class="container" style="margin-top: 5%; margin-bottom: 10%; text-align:center; font-size: 0.8em">
+
+    <div class="margin:">
+
+        <h1 style="font-size: 4em;">CHURN RATE PREDICTION MODEL</h1>
+        <br>
+        <h3 class="alert alert-info">FILL ALL THE DETAILS TO GET THE RESULT</h3>
+        <br>
+        <br>
+
+        <form method="post" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+        
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default"><h2>Name</h2></span>
+            <input name="Person Name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <br>
+        <h3>Location: </h3>
+        <select name="location" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected disabled>Select</option>
+            <option value="7">Chennai</option>
+            <option value="6">Noida</option>
+            <option value="5">Bangalore</option>
+            <option value="4">Hyderabad</option>
+            <option value="3">Pune</option>
+            <option value="2">Madurai</option>
+            <option value="1">Others</option>
+        </select>
+        <br>
+        <h3>Employee Group : </h3>
+        <select name="emp-group" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected disabled>Select</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="B3">B3</option>
+            <option value="other group">Others</option>
+        </select>
+        <br>
+        <h3>Job Function: </h3>
+        <select name="function" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected disabled>Select</option>
+            <option value="Support">Support</option>
+            <option value="Operation">Operation</option>
+            <option value="Sales">Sales</option>
+        </select>
+        <br>
+        <h3>Gender: </h3>
+        <select name="gender" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected disabled>Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="other">Others</option>
+        </select>
+        <br>
+        <h3>Tenure Group: </h3>
+        <select name="tenure group" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected disabled>Select</option>
+            <option value="< =1"> Less than 1 year</option>
+            <option value="> 1 & < =3">Between 1 - 3 years</option>        
+        </select>
+        <br>
+        <h3>Experience in Industry: </h3>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Years</span>
+            <input name="experience" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+        </div>
+        <br>
+        <h3>Age: </h3>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Years</span>
+            <input name="age" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+        </div>
+        <br>
+        <h3>Marital Status: </h3>
+        <select name="Marital" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected disabled>Select</option>
+            <option value="Marr.">Married</option>
+            <option value="Single">Single</option>
+            <option value="Other status">Others</option>
+        </select>
+        <br>
+        <h3>Source of Hiring: </h3>
+        <select name="Hiring" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected disabled>Select</option>
+            <option value="Agency">Agency</option>
+            <option value="Direct">Direct</option>
+            <option value="Employee Referral">Employee Referral</option>
+        </select>
+        <br>
+        <h3>Promotion Quotient: </h3>
+        <select name="Promoted" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected disabled>Select</option>
+            <option value="1">Promoted</option>
+            <option value="0">Not Promoted</option>
+        </select>
+        <br>
+        <h3>Job Role Match: </h3>
+        <select name="Job" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected disabled>Select</option>
+            <option value="1">Job Role Matches</option>
+            <option value="0">Job Role Does Not Match</option>
+        </select>
+        <br>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-info btn-lg" name="result_button" value="Save&Next">GET RESULT</button>
+        </div>
+        </form>
+    </div>   
+    <br><br><br> 
+
+    <div class="result container">
+        <p>Result will be shown here.</p>
+        <br>
+        <br>
+
+        {% if result %}
+        <h2>CHURN VALUE: {{ result }}</h2>
+        {% endif %}
+        <br>
+        <br>
+
+        <p class="">True suggests Employee may leave the job. <br>False suggests Employee will continue the job.</p>
+
+    </div>
+
+   
+
+
+</body>
+</html>
